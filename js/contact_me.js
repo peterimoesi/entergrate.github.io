@@ -20,7 +20,7 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        url: "https://bitbucket.org/peterimoesi/entergrate/raw/43ab3ad386241b5680d76c119048fb7c6aa768ce/contact.php",
+        url: "http://localhost/example/contact.php",
         type: "POST",
         data: {
           name: name,
@@ -29,7 +29,7 @@ $(function() {
           message: message
         },
         cache: false,
-        success: function() {
+        success: function(e) {
           // Success message
           $('#success').html("<div class='alert alert-success'>");
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
